@@ -2,9 +2,10 @@
   "name": "ai-pja-web",
   "version": "0.1.0",
   "scripts": {
-    "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html",
-    "start": "serve -s dist",
+    "dev": "parcel src/index.html --out-dir build/dev",
+    "build": "del build/prod & parcel build src/index.html --out-dir build/prod",
+    "build:tree-shaking": "npm run build -- --experimental-scope-hoisting",
+    "start": "serve -s build/prod",
     "flow": "flow"
   },
   "husky": {
@@ -20,10 +21,12 @@
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
-    "@babel/preset-react": "^7.0.0",
+    "babel-plugin-lodash": "^3.3.4",
+    "del-cli": "^1.1.0",
     "flow-bin": "^0.95.1",
     "husky": "^1.3.1",
     "parcel-bundler": "^1.12.3",
+    "parcel-plugin-bundle-visualiser": "^1.2.0",
     "parcel-plugin-static-files-copy": "^2.0.0",
     "prettier": "^1.16.4",
     "pretty-quick": "^1.10.0",
