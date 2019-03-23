@@ -1,0 +1,15 @@
+# editors
+
+/.idea
+/.vscode
+
+# temp dirs
+
+/.cache
+/dist
+node_modules
+
+# misc
+
+/.DS_Store
+/package-lock.json
