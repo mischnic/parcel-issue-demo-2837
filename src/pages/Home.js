@@ -4,6 +4,7 @@
 import { jsx } from "@emotion/core";
 import { Button } from "antd-mobile";
 import { Observer } from "mobx-react-lite";
+import { Translation } from "react-i18next";
 
 import appStore from "../stores/app";
 
@@ -15,6 +16,9 @@ const Home = () => {
         <Observer>{() => `count: ${appStore.count}`}</Observer>
       </p>
       <Button onClick={appStore.inc}>Inc</Button>
+      <p>
+        <Translation>{t => `App Title: ${t("app:title")}`}</Translation>
+      </p>
     </div>
   );
 };
