@@ -2,45 +2,16 @@
   "name": "ai-pja-web",
   "version": "0.1.0",
   "scripts": {
-    "dev": "parcel src/index.html --out-dir build/dev",
-    "build": "del build/prod & parcel build src/index.html --out-dir build/prod",
-    "build:tree-shaking": "npm run build -- --experimental-scope-hoisting",
-    "start": "serve -s build/prod",
-    "flow": "flow"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
+    "build": "parcel build src/index.html",
+    "build:ts": "parcel build src/index.html --experimental-scope-hoisting"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.9",
-    "@emotion/styled": "^10.0.9",
-    "antd-mobile": "^2.2.11",
-    "i18next": "^15.0.7",
-    "i18next-browser-languagedetector": "^3.0.1",
-    "lodash": "^4.17.11",
-    "mobx": "^5.9.0",
-    "mobx-react-lite": "^1.1.1",
-    "mobx-state-tree": "^3.12.2",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
-    "react-i18next": "^10.5.3",
     "react-router-dom": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
-    "babel-plugin-emotion": "^10.0.9",
-    "babel-plugin-lodash": "^3.3.4",
-    "babel-plugin-transform-inline-environment-variables": "^0.4.3",
-    "del-cli": "^1.1.0",
-    "flow-bin": "^0.95.1",
-    "husky": "^1.3.1",
-    "parcel-bundler": "^1.12.3",
-    "parcel-plugin-bundle-visualiser": "^1.2.0",
-    "parcel-plugin-static-files-copy": "^2.0.0",
-    "prettier": "^1.16.4",
-    "pretty-quick": "^1.10.0",
-    "serve": "^10.1.2"
+    "cssnano": "^4.1.10"
   }
 }
